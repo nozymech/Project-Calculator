@@ -15,6 +15,16 @@ const divide = function(a, b) {
 	return a / b ;
 };
 
+const negative = function(a) {
+	return -a ;
+};
+
+
+const percent = function(a) {
+    return a/100;
+}
+
 function operate(a,b) {
     add(a,b);
 }
+
