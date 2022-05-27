@@ -78,6 +78,11 @@ html {
     background-color: #004C9A;
 }
 
+#equal:hover{
+    background-color: royalblue;
+}
+
+
 .formula{
     font-size: 15px;
 }
