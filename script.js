@@ -27,4 +27,3 @@ const percent = function(a) {
 function operate(a,b) {
     add(a,b);
 }
-
