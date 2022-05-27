@@ -9,11 +9,6 @@ html {
     box-sizing: inherit;
   }
 
-.container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-
 .calculator {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -84,7 +79,7 @@ html {
 
 
 .formula{
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .integer{
