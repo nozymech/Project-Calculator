@@ -1,18 +1,12 @@
-let displayValue = "";
-const formula = document.getElementById("formula");
+let displayValue = "22";
 const int = document.getElementById("int")
-formula.innerText = displayValue;
+int.innerText = displayValue;
+const ac = document.getElementById("ac")
 
-document.body.addEventListener("click", Event => {
-	if (Event.target.nodeName == "BUTTON") {
-		displayValue += Event.target.textContent;
-		formula.innerText = displayValue;
-		int.innerText = displayValue;
-
-	}
-});
-
-
+ac.addEventListener("click",()=>{
+	displayValue = "0";
+	int.innerText = displayValue;
+})
 
 const add = function(a, b) {
 	return a + b ;
