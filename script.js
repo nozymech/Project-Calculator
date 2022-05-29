@@ -120,23 +120,23 @@ const disable = function() {
 
 
 const add = function(a, b) {
-	displayValue = a + b ;
+	displayValue = Math.round((a + b)*100)/100;
 	int.innerText = displayValue;
 };
 
 const subtract = function(a, b) {
-	displayValue = a - b ;
+	displayValue = Math.round((a - b)*100)/100;
 	int.innerText = displayValue;
 };
 
 const multiply = function(a, b) {
-	displayValue = a * b ;
+	displayValue = Math.round((a * b)*100)/100;
 	int.innerText = displayValue;
 };
 
 
 const divide = function(a, b) {
-	displayValue = a / b ;
+	displayValue = Math.round((a / b)*100)/100 ;
 	int.innerText = displayValue;
 };
 
