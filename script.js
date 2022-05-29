@@ -17,6 +17,8 @@ ac.addEventListener("click",()=>{
 	displayValue = "";
 	int.innerText = displayValue;
 	numbers = [];
+	operation = [];
+	document.getElementById("point").disabled = false;
 })
 
 // click numbers: add value
@@ -31,6 +33,7 @@ numberButtons.forEach((button)=>{
 //click operate buttons : 1. save value and wait for another value to calculation 
 operateButtons.forEach((button)=>{
 	button.addEventListener('click',()=>{
+		document.getElementById("point").disabled = false;
 		// save the first target button id 
 		operation.push(button.id);
 		// put value into sandbox 
@@ -72,20 +75,24 @@ equal.addEventListener("click",()=>{
 		if(operation[0] == "add"){
 			add(Number(numbers[0]),Number(numbers[1]));
 			// save result into sandbox ,and not change second value 
-			numbers[0] = displayValue;
+			numbers = [];
+			operation = [];
 	
 	
 		}else if(operation[0] == "subtract") {
 			subtract(Number(numbers[0]),Number(numbers[1]));
-			numbers[0] = displayValue;
+			numbers = [];
+			operation = [];
 	
 		}else if(operation[0] == "multiply") {
 			multiply(Number(numbers[0]),Number(numbers[1]));
-			numbers[0] = displayValue;
+			numbers = [];
+			operation = [];
 	
 		}else if(operation[0] == "divide") {
 			divide(Number(numbers[0]),Number(numbers[1]));
-			numbers[0] = displayValue;
+			numbers = [];
+			operation = [];
 	
 		}
 	}else {
@@ -95,15 +102,17 @@ equal.addEventListener("click",()=>{
 
 minus.addEventListener("click",()=>{
 	numbers.push(displayValue);
-	negative(numbers[0])
-	numbers = [];
+	negative(numbers[numbers.length-1])
 })
 
 percentage.addEventListener("click",()=>{
 	numbers.push(displayValue);
-	percent(numbers[0])
-	numbers = [];
+	percent(numbers[numbers.length-1])
 })
+
+const disable = function() {
+	document.getElementById("point").disabled = true;
+}
 
 
 
@@ -135,11 +144,12 @@ const divide = function(a, b) {
 const negative = function(a) {
 	displayValue = -a  ;
 	int.innerText = displayValue;
-	numbers = [];
+	numbers.pop().push(displayValue);
 };
 
 
 const percent = function(a) {
-    displayValue = a/100  ;
+	displayValue = a/100  ;
 	int.innerText = displayValue;
+	numbers.pop().push(displayValue);
 }

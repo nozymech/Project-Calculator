@@ -10,13 +10,12 @@
 <body>
     <div class="calculator"> 
         <div class="screen"> 
-            <div id="formula"></div>
             <div id="int"></div>
         </div>
         <div class="keys"> 
-          <button  id="ac">AC</button>
-          <button  id="minus">±</button>
-          <button  id="percentage">%</button>
+          <button class="functions" id="ac">AC</button>
+          <button class="functions" id="minus">±</button>
+          <button class="functions" id="percentage">%</button>
           <button class="operator" id="divide">÷</button>
           <button class="num" id="seven" value="7">7</button>
           <button class="num" id="eight" value="8">8</button>
@@ -31,7 +30,7 @@
           <button class="num" id="three" value="3">3</button>
           <button class="operator" id="add">+</button>
           <button class="num"  id="zero" value="0">0</button>
-          <button class="num" id="point" value=".">.</button>
+          <button class="num" id="point" value="." onclick="disable()">.</button>
           <button  id="equal">=</button>
         </div>
     </div>
