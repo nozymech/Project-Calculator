@@ -142,7 +142,7 @@ const divide = function(a, b) {
 
 
 const negative = function(a) {
-	displayValue = -a  ;
+	displayValue = a.slice(0,-1)  ;
 	int.innerText = displayValue;
 	numbers.pop().push(displayValue);
 };
