@@ -3,14 +3,13 @@ let displayValue = "";
 let numbers = [];
 //operate type sandbox
 let operation = [];
+//other operate type sandbox
+let otherOperation = [];
 const int = document.getElementById("int")
 int.innerText = displayValue;
 const numberButtons = document.querySelectorAll("button.num")
 const operateButtons = document.querySelectorAll("button.operator")
-const allClear = document.getElementById("allClear")
-const equal = document.getElementById("equal")
-const minus = document.getElementById("minus")
-const percentage = document.getElementById("percentage")
+const otherButtons = document.querySelectorAll("button.other")
 
 // click number buttons : add value
 numberButtons.forEach((button)=>{
@@ -50,25 +49,28 @@ equal.addEventListener("click",()=>{
 	}
 })
 
-// click AC: reset the calculator
-allClear.addEventListener("click",()=>{
-	displayValue = "";
-	int.innerText = displayValue;
-	numbers = [];
-	operation = [];
-	document.getElementById("point").disabled = false;
-})
-
-//click delete button
-minus.addEventListener("click",()=>{
-	numbers.push(displayValue);
-	del(numbers[numbers.length-1])
-})
-
-//click percentage button
-percentage.addEventListener("click",()=>{
-	numbers.push(displayValue);
-	percent(numbers[numbers.length-1])
+//click button : AC,Del,%
+otherButtons.forEach((button)=>{
+	button.addEventListener('click',()=>{
+		// save the first target button id 
+		otherOperation.push(button.id);
+		if(otherOperation[0] == "allClear"){
+			displayValue = "";
+			int.innerText = displayValue;
+			numbers = [];
+			operation = [];
+			otherOperation =[];
+			document.getElementById("point").disabled = false;
+		}else if (otherOperation[0] == "minus"){
+			otherOperation =[];
+			numbers.push(displayValue);
+			del(numbers[numbers.length-1])
+		}else if (otherOperation[0] == "percentage"){
+			otherOperation =[];
+			numbers.push(displayValue);
+			percent(numbers[numbers.length-1])
+		}
+	})
 })
 
 
